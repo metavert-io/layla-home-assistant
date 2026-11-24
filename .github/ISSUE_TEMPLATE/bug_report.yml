@@ -1,0 +1,37 @@
+name: Bug report
+description: Something doesn't work as it should
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this. Please don't post your email, passwords, tokens, or your property's or
+        devices' names or addresses here: this page is public.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: This integration's version and Home Assistant's (Settings → About).
+      placeholder: "Layla 0.1.0, Home Assistant 2026.10.4"
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: |
+        Settings → Devices & services → Layla → ⋮ → Download diagnostics, then drag the file here. It leaves out
+        your email, the token, and devices' and properties' names, IDs, MAC addresses and serial numbers.
+  - type: textarea
+    id: log
+    attributes:
+      label: Log
+      description: Lines from the Home Assistant log that mention layla or pycognito. Check them for anything private first.
+      render: text

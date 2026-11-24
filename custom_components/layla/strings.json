@@ -1,0 +1,80 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sign in to Layla",
+        "description": "The email and password you use in the Layla app. The password is used once, to sign in, and isn't stored.",
+        "data": {
+          "email": "Email",
+          "password": "Password"
+        },
+        "sections": {
+          "advanced": {
+            "name": "Advanced: where to sign in",
+            "description": "Layla's web app uses these values. Change them only if Layla gives you a client or address of your own.",
+            "data": {
+              "api_url": "API address",
+              "region": "Sign-in region",
+              "user_pool_id": "User pool ID",
+              "client_id": "App client ID"
+            },
+            "data_description": {
+              "api_url": "Layla's REST API. Leave it as it is unless Layla gives you another.",
+              "region": "The AWS region of Layla's sign-in service.",
+              "user_pool_id": "Layla's sign-in user pool. It starts with the region.",
+              "client_id": "The app client to sign in with. The default is the one Layla's web app uses; use another if Layla gives you one."
+            }
+          }
+        }
+      },
+      "reauth_confirm": {
+        "title": "Sign in to Layla again",
+        "description": "Layla ended the session for {email}. Enter the password to sign in again.",
+        "data": {
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Layla didn't accept that email and password.",
+      "mfa": "This account has two-step verification on, which this integration can't answer yet.",
+      "cannot_connect": "Couldn't reach Layla. Try again in a minute.",
+      "invalid_endpoints": "Layla's sign-in service doesn't know that user pool or app client, or the client doesn't allow signing in with a password.",
+      "invalid_api_url": "The API address has to start with https://.",
+      "invalid_region": "That doesn't look like an AWS region (for example eu-west-1).",
+      "invalid_user_pool_id": "The user pool ID has to start with the region and an underscore (for example eu-west-1_…).",
+      "unknown": "Something unexpected went wrong; the Home Assistant log has the details."
+    },
+    "abort": {
+      "already_configured": "This Layla account is already set up.",
+      "reauth_successful": "Signed in again.",
+      "wrong_account": "That's a different Layla account from the one set up here."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Layla options",
+        "description": "Saving reloads the integration. Entities for readings or alarms you turn off are removed.",
+        "data": {
+          "update_minutes": "Update every",
+          "online_minutes": "Online if it reported within",
+          "properties": "Properties",
+          "property_in_name": "Put the property's name in front of each device's name",
+          "readings": "Readings",
+          "alarms": "Alarm sensors to always create",
+          "device_alarms": "Also create sensors for the alarms turned on for each device in Layla, and for any alarm that fires"
+        },
+        "data_description": {
+          "update_minutes": "Each update is one request for your account's settings, one for your properties and one per property. Layla's sensors report about every 5 minutes.",
+          "online_minutes": "Layla doesn't say whether a sensor is connected, so it counts as online if it sent a reading this recently.",
+          "properties": "Leave all unticked to include every property, including ones you add later. Devices in properties you leave out are removed.",
+          "property_in_name": "Useful when several properties have a device with the same name. Entity IDs don't change.",
+          "readings": "A sensor is only created for readings the device actually reports.",
+          "alarms": "Each one is on while the alarm is active, including while it's snoozed in Layla.",
+          "device_alarms": "Once a device has a sensor for an alarm, it keeps it (off while the alarm isn't active). Turn this off to get exactly the alarms chosen above."
+        }
+      }
+    }
+  }
+}
