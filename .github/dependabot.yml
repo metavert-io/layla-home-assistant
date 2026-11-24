@@ -1,0 +1,20 @@
+# Keeps the pinned GitHub Actions and the test requirements current. Each update arrives as a pull request and
+# runs the checks before it can be merged.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ["*"]
+
+  # pytest-homeassistant-custom-component follows Home Assistant's releases: a bump tests against a newer one
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      test-requirements:
+        patterns: ["*"]
