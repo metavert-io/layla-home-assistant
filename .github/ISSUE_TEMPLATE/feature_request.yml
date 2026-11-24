@@ -1,0 +1,32 @@
+name: Feature request
+description: An idea for something the integration could do
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the idea. Please don't post your email, passwords, tokens, or your property's or devices' names
+        or addresses here: this page is public.
+  - type: textarea
+    id: what
+    attributes:
+      label: What you'd like
+      description: What it should do, and what you'd use it for.
+    validations:
+      required: true
+  - type: textarea
+    id: layla
+    attributes:
+      label: Where Layla shows it
+      description: |
+        If Layla's app or website already shows this (a reading, an alarm, a setting), say where. It helps find it
+        in Layla's API.
+  - type: dropdown
+    id: device
+    attributes:
+      label: Layla device
+      options:
+        - Layla 3.0
+        - Layla Sensor Pro
+        - Layla EM
+        - Other or not sure

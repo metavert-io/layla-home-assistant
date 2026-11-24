@@ -3,6 +3,8 @@
 [![Validate](https://github.com/metavert-io/layla-home-assistant/actions/workflows/validate.yml/badge.svg)](https://github.com/metavert-io/layla-home-assistant/actions/workflows/validate.yml)
 [![Tests](https://github.com/metavert-io/layla-home-assistant/actions/workflows/tests.yml/badge.svg)](https://github.com/metavert-io/layla-home-assistant/actions/workflows/tests.yml)
 [![HACS custom repository](https://img.shields.io/badge/HACS-custom-41BDF5.svg)](https://hacs.xyz/docs/faq/custom_repositories/)
+[![Latest release](https://img.shields.io/github/v/release/metavert-io/layla-home-assistant)](https://github.com/metavert-io/layla-home-assistant/releases/latest)
+[![License: MIT](https://img.shields.io/github/license/metavert-io/layla-home-assistant)](LICENSE)
 
 A custom [Home Assistant](https://www.home-assistant.io) integration for [Layla](https://layla.eco) room sensors,
 the noise, occupancy and air-quality sensors LaylaElectric makes for short-term rentals. It reads your sensors from
@@ -130,6 +132,8 @@ come back as 0/0 when there's no range; and there's a `party_detection` alarm.
 [Open an issue](https://github.com/metavert-io/layla-home-assistant/issues). For a bug, attach the integration's
 diagnostics (**Settings → Devices & services → Layla → ⋮ → Download diagnostics**) and the relevant lines from the
 Home Assistant log. Check both for anything you'd rather not share before you post.
+
+For a security problem, don't open an issue: see [SECURITY.md](SECURITY.md) for how to report it privately.
 
 ## Development
 
